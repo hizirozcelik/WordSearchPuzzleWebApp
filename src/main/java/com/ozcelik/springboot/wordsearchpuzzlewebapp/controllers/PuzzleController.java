@@ -17,7 +17,6 @@ import java.util.concurrent.ExecutionException;
 // Words retrieve from a API endpoint.
 // It also creates a text file for the puzzle.
 // Author: Hizir Ozcelik | Nov 2022 | @Oakville
-//
 @Controller
 public class PuzzleController {
 
