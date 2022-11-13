@@ -42,11 +42,11 @@ public class PuzzleController {
         } else if (level.equalsIgnoreCase("Medium")) {
             numberOfWord = 20;
             row = 20;
-            column = 20;
+            column = 15;
         } else {
-            numberOfWord = 30;
-            row = 30;
-            column = 20;
+            numberOfWord = 25;
+            row = 25;
+            column = 15;
         }
 
         HelperMethods utility = new HelperMethods(row, column);
