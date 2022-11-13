@@ -18,7 +18,7 @@ public class Cell {
     public Cell(int x, int y) {
         this.x = x;
         this.y = y;
-        letter = 0;
+        letter = '0';
         isFilled = false;
     }
 

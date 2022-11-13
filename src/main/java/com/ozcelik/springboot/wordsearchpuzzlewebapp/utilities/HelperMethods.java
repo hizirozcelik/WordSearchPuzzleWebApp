@@ -1,4 +1,4 @@
-package com.ozcelik.springboot.wordsearchpuzzlewebapp.utilitys;
+package com.ozcelik.springboot.wordsearchpuzzlewebapp.utilities;
 
 import com.ozcelik.springboot.wordsearchpuzzlewebapp.APIUtility.JsonBodyHandler;
 import com.ozcelik.springboot.wordsearchpuzzlewebapp.beans.Word;
@@ -20,6 +20,7 @@ public class HelperMethods {
 
     public HelperMethods() {
     }
+
     public HelperMethods(int row, int column) {
         this.row = row;
         this.column = column;
@@ -32,7 +33,7 @@ public class HelperMethods {
 
         // create a request
         var request = HttpRequest.newBuilder(
-                        URI.create("https://api.api-ninjas.com/v1/randomword?type="+type))
+                        URI.create("https://api.api-ninjas.com/v1/randomword?type=" + type))
                 .header("accept", "application/json")
                 .build();
 
@@ -53,7 +54,18 @@ public class HelperMethods {
             for (int j = 0; j < column; j++) {
                 grid[i][j] = new Cell();
 
-                grid[i][j].setLetter(generateLetter(MIN, MAX));
+                //grid[i][j].setLetter(generateLetter(MIN, MAX));
+                grid[i][j].setLetter('#');
+            }
+        }
+    }
+
+    public void fillRandomLetter(Cell[][] grid) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                if (grid[i][j].getLetter() == '#') {
+                    grid[i][j].setLetter(generateLetter(MIN, MAX));
+                }
             }
         }
     }
@@ -237,15 +249,13 @@ public class HelperMethods {
         }
     }
 
-    public boolean isInt(String input, int min, int max) {
-        int value = 0;
-        try {
-            value = Integer.parseInt(input);
-        } catch (NumberFormatException e) {
-            return false;
+    public char[][] copySolution(Cell[][] grid, int row, int column) {
+        char[][] solution = new char[row][column];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                solution[i][j] = grid[i][j].getLetter();
+            }
         }
-        if(value < min || value > max) return false;
-
-        return true;
+        return solution;
     }
 }
