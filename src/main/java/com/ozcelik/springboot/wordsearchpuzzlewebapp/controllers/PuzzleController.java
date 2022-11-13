@@ -9,23 +9,30 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+
+// This web application create a word search puzzle based on user selections.
+// It creates three different size puzzles with diffrent vord type selection.
+// Words retrieve from a API endpoint.
+// Also it creates a text file for the puzzle.
+// Author: Hizir Ozcelik | Nov 2022 | @Oakville
 @Controller
 public class PuzzleController {
 
     @GetMapping("/")
-    public String index(UserInputs userInputs) {
+    public String index(Model model, UserInputs userInputs) {
+        model.addAttribute("userInputs", userInputs);
+
         return "index";
     }
 
     @PostMapping("/createPuzzle")
     public String createPuzzle(Model model, UserInputs userInputs) throws ExecutionException, InterruptedException {
 
-        int row = 0;
-        int column = 0;
-        int numberOfWord = 0;
+        int row;
+        int column;
+        int numberOfWord;
         String type = userInputs.getType();
         String level = userInputs.getLevel();
         if (level.equalsIgnoreCase("Easy")) {
