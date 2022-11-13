@@ -44,7 +44,7 @@
 
 </section>
 
-<button id="buttonText" class="btn btn-primary" onclick="myFunction()" >Show solution</button>
+<button id="buttonText" class="btn btn-primary btn-sm" onclick="myFunction()" >Show solution</button>
 <a href="/" class="link-primary">Create new puzzle</a>
 
 
@@ -58,6 +58,7 @@
                     <tr th:each="row:${solution}">
                         <td th:each="letter:${row}" th:text="${letter}"></td>
                     </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -74,9 +75,9 @@
         crossorigin="anonymous"></script>
 
 </body>
-<footer class="bg-light text-lg-start">
+<footer class="text-md-start">
     <!-- Copyright -->
-    <div class="text-leftAligned p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-leftAligned p-3">
         Created by Hizir Ozcelik, November 2022 @Oakville
         <!-- <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
     </div>

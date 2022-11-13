@@ -13,8 +13,8 @@ import java.util.concurrent.ExecutionException;
 
 
 // This web application create a word search puzzle based on user selections.
-// It creates three different size puzzles with diffrent vord type selection.
-// Words retrieve from a API endpoint.
+// It creates three different size puzzles with different word type selection.
+// Words retrieve from an API endpoint.
 // It also creates a text file for the puzzle.
 // Author: Hizir Ozcelik | Nov 2022 | @Oakville
 @Controller

@@ -4,9 +4,9 @@
     font-size: 20px;
     /* text-align: center; */
 }
-/*body{*/
-/*    text-align: center;*/
-/*}*/
+a{
+    font-size: 20px;
+}
 .mono-type {
     font-family: "Courier New", Courier, monospace;
     display: block;
@@ -27,14 +27,14 @@
 }
 
 #puzzleTable {
-    font-size: 30px;
+    font-size: 20px;
 }
 #solutionTable {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #wordsTable {
-    font-size: 30px;
+    font-size: 20px;
 }
 #wordList{
     text-decoration: underline;
